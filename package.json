@@ -1,0 +1,19 @@
+{
+  "name": "flickrgallery",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.0.0",
+    "cookie-parser": "~1.0.1",
+    "debug": "~0.7.4",
+    "express": "~4.2.0",
+    "express-handlebars": "1.1.x",
+    "morgan": "~1.0.0",
+    "oauth": "0.9.x",
+    "static-favicon": "~1.0.0",
+    "underscore": "1.7.x"
+  }
+}

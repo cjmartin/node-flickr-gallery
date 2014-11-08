@@ -1,0 +1,27 @@
+.main-carousel {
+	margin: 20px 0 20px 0;
+}
+
+.main-carousel-item {
+	height: 550px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.gallery-set {
+	display: block;
+	padding: 15px;
+	margin-bottom: 15px;
+	text-align: center;
+	border: 1px solid #CCCCCC;
+}
+
+.gallery-set-image {
+	width: 100%;
+	height: 250px;
+	margin-bottom: 15px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
