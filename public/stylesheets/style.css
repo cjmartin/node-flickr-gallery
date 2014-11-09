@@ -25,3 +25,9 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 }
+
+.gallery-image {
+	width: 100%;
+	height: auto;
+	margin: 10px 0 10px 0;
+}

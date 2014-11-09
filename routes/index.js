@@ -1,7 +1,8 @@
 var _ = require('underscore'),
 	express = require('express'),
 	router = express.Router(),
-	flickrAPI = require('../lib/flickr-api');
+	flickrAPI = require('../lib/flickr-api'),
+	utils = require('../lib/utilities');
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -27,12 +28,7 @@ router.get('/', function(req, res) {
 				photosets.push({
 					id: s.id,
 					title: s.title._content,
-					images: {
-						large: s.primary_photo_extras.url_l,
-						medium: s.primary_photo_extras.url_z,
-						small: s.primary_photo_extras.url_n,
-						square: s.primary_photo_extras.url_q
-					}
+					images: utils.normalizePhotoSizes(s.primary_photo_extras)
 				});
 			}
 		});
@@ -61,27 +57,11 @@ router.get('/:set_id', function(req, res) {
 		}
 
 		console.log(responseData);
-		var photos = [];
-		// _.each(responseData.photosets.photoset, function(s){
-		// 	if (s.primary_photo_extras.url_l) {
-		// 		photosets.push({
-		// 			id: s.id,
-		// 			title: s.title._content,
-		// 			images: {
-		// 				large: s.primary_photo_extras.url_l,
-		// 				medium: s.primary_photo_extras.url_z,
-		// 				small: s.primary_photo_extras.url_n,
-		// 				square: s.primary_photo_extras.url_q
-		// 			}
-		// 		});
-		// 	}
-		// });
+		var photos = utils.photosFromList(responseData.photoset.photo);
 
 		console.log(photos);
-		res.render('index', { title: 'Gallery', photos: photos });
+		res.render('photoset', { title: 'Gallery', photos: photos });
 	});
-
-	// res.render('photoset', {id: req.params.set_id});
 });
 
 module.exports = router;
