@@ -5,7 +5,7 @@ var _ = require('underscore'),
 	utils = require('../lib/utilities');
 
 /* GET home page. */
-router.get('/', function(req, res) {
+router.get('/gallery', function(req, res) {
 	var setsCall = {
 		method: 'flickr.photosets.getList',
 		auth: false,
@@ -38,7 +38,7 @@ router.get('/', function(req, res) {
 	});
 });
 
-router.get('/:set_id', function(req, res) {
+router.get('/gallery/:set_id', function(req, res) {
 	var setCall = {
 		method: 'flickr.photosets.getPhotos',
 		auth: false,
