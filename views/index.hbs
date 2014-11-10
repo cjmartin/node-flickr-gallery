@@ -14,10 +14,12 @@
 	<div class="row">
 	{{/unless}}{{/if}}
 		<div class="col-sm-4">
-			<a href="/{{id}}" class="gallery-set">
-				<div class="gallery-set-image" style="background-image:url('{{images.medium.url}}')"></div>
-				<span>{{title}}</span>
-			</a>
+			<div class="gallery-set">
+				<a href="/{{id}}" class="no-underline block">
+					<span class="gallery-set-image" style="background-image:url('{{images.medium.url}}')"></span>
+					<h2>{{title}}</h2>
+				</a>
+			</div>
 		</div>
 	{{/each}}
 	</div>

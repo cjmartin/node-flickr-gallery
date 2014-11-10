@@ -1,0 +1,195 @@
+body {
+    font-family: Palatino, 'Palatino Linotype', 'Book Antiqua', serif;
+}
+
+/* Base Element Styles */
+
+a {
+	text-decoration: none;
+	color: #7D9B3D;
+
+	border-bottom: 1px transparent;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #7D9B3D;
+
+	border-bottom: #7D9B3D dotted 1px;
+}
+
+a.no-underline, a.no-underline:hover, .fancybox-wrap a:hover {
+	border-bottom: none;
+}
+
+a.block {
+	display: block;
+}
+
+h2 {
+	line-height: 24px;
+	font-size: 12px;
+}
+
+h3 {
+	line-height: 24px;
+	font-size: 12px;
+}
+
+h2, h3 {	
+	margin: 0 0 15px;
+	
+	font-weight: normal;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	
+	color: #7BC0D6;
+}
+
+hr.decorative {
+	background-image: url('http://sweetlaurencakes.com/assets/images/hr_stripes.gif');
+	
+	height: 2px;
+	
+	margin:0 auto 15px;
+	
+	border: none;
+}
+
+/* Header */
+
+.header {
+	padding: 80px 0 0;
+	text-align: center;
+}
+
+.header h1 {
+	margin: 0;
+	padding: 0;
+}
+
+.big-logo {
+	background-image: url('http://sweetlaurencakes.com/assets/images/sweet_lauren_cakes.png');
+	background-repeat: no-repeat;
+	display: block;
+	width: 400px;
+	height: 135px;
+	margin: 0 auto 20px;
+	text-indent: -9999px;
+}
+
+/* Navigation */
+
+.nav {
+	margin: 0 0 15px;
+}
+
+.nav a {
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+.nav ul {	
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+.nav li {
+	display: inline-block;
+	list-style: none;
+	padding: 0px;
+	margin-right: 30px;
+}
+
+.nav li:last-child { margin-right: 0; }
+
+/* IE7 Hack - http://www.brunildo.org/test/InlineBlockLayout.html */
+li { *display: inline; zoom: 1; }
+
+/* Image Carousel */
+
+.main-carousel {
+	margin: 0 0 20px;
+}
+
+.main-carousel-item {
+	height: 550px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+/* Gallery */
+
+.gallery-set {
+	padding: 15px 15px 0;
+	margin-bottom: 15px;
+	text-align: center;
+	border: 1px solid #CCCCCC;
+}
+
+.gallery-set-image {
+	display: block;
+	width: 100%;
+	height: 250px;
+	margin-bottom: 15px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.gallery-image {
+	width: 100%;
+	height: auto;
+	margin: 10px 0 10px 0;
+}
+
+/* Footer */
+
+.copyright {
+    padding:0 0 20px;
+
+    text-align:center;
+    font-size:12px;
+    color:#ccc;
+}
+
+/* Page Wrapper */
+
+.wrapper {
+	background-image: url('http://sweetlaurencakes.com/assets/images/bg.gif');
+	background-position: center;
+	background-repeat: repeat-y;
+	background-size: 1210px 1px;
+	min-height: 1277px;
+	position: relative;
+}
+
+.wrapper-top {
+	background-image: url('http://sweetlaurencakes.com/assets/images/container_top.gif');
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: 1220px 1100px;
+	width: 100%;
+	height: 1100px;
+	position: absolute;
+	top: 0;
+}
+
+.wrapper-body {
+	position: relative;
+	padding-bottom: 175px;
+}
+
+.wrapper-bottom {
+	background-image: url('http://sweetlaurencakes.com/assets/images/container_bottom.gif');
+	background-color: #FFFFFF;
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: 1220px 94px;
+	width: 100%;
+	padding-top: 105px;
+	position: absolute;
+	bottom: 0;
+}
