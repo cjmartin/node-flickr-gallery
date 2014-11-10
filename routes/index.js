@@ -18,7 +18,7 @@ router.get('/gallery', function(req, res) {
 	flickrAPI.get(req, setsCall.method, setsCall.params, setsCall.auth, function(err, responseData) {
 		if (err) {
 			console.log("Flickr API error: " + err);
-			res.send(500);
+			return res.send(500);
 		}
 
 		console.log(responseData);
@@ -53,7 +53,12 @@ router.get('/gallery/:set_id', function(req, res) {
 	flickrAPI.get(req, setCall.method, setCall.params, setCall.auth, function(err, responseData) {
 		if (err) {
 			console.log("Flickr API error: " + err);
-			res.send(500);
+			return res.send(500);
+		}
+
+		if (responseData.stat=== "fail") {
+			console.log("Set not found, or other Flickr error: " + req.params.set_id);
+			return res.send(404);
 		}
 
 		console.log(responseData);
