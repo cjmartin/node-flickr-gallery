@@ -1,9 +1,11 @@
 <div class="container">
 	<div id="mainCarousel" class="carousel slide main-carousel" data-ride="carousel">
 		<div class="carousel-inner">
-			{{#each photosets}}
-			<div class="item main-carousel-item{{#unless @index}} active{{/unless}}" style="background-image:url('{{images.large.url}}')"></div>
-			{{/each}}
+		{{#each photosets}}
+		{{#if (gte images.large.width 1024)}}
+			<div class="item main-carousel-item{{#unless @index}} active{{/unless}}" style="background-image:url('{{images.biggest.url}}')"></div>
+		{{/if}}
+		{{/each}}
 		</div>
 	</div>
 	
