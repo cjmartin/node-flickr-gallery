@@ -11,34 +11,40 @@ router.get('/gallery', function(req, res) {
 	res.render('index', { title: 'Gallery', photosets: req.photosets });
 });
 
-router.get('/gallery/:set_id', function(req, res) {
-	var setCall = {
-		method: 'flickr.photosets.getPhotos',
-		auth: false,
-		cachetime: 60*60, // 1 Hour cache. 
-		params: {
-			extras: 'url_q,url_n,url_z,url_l,url_h,url_k,media',
-			page: 1,
-			per_page: 500,
-			photoset_id: req.params.set_id
-		}
-	};
+router.get('/gallery/:set_slug', function(req, res) {
+	var photoset = req.photosets[req.params.set_slug] || null;
 
-	flickrAPI.get(req, setCall.method, setCall.params, setCall.auth, function(err, responseData) {
-		if (err) {
-			console.log("Flickr API error: " + err);
-			return res.send(500);
-		}
+	if (photoset) {
+		var setCall = {
+			method: 'flickr.photosets.getPhotos',
+			auth: false,
+			cachetime: 60*60, // 1 Hour cache. 
+			params: {
+				extras: 'url_q,url_n,url_z,url_l,url_h,url_k,media',
+				page: 1,
+				per_page: 500,
+				photoset_id: photoset.id
+			}
+		};
 
-		if (responseData.stat=== "fail") {
-			console.log("Set not found, or other Flickr error: " + req.params.set_id);
-			return res.send(404);
-		}
+		flickrAPI.get(req, setCall.method, setCall.params, setCall.auth, function(err, responseData) {
+			if (err) {
+				console.log("Flickr API error: " + err);
+				return res.send(500);
+			}
 
-		var photos = utils.photosFromList(responseData.photoset.photo);
+			if (responseData.stat=== "fail") {
+				console.log("Set not found, or other Flickr error: " + req.params.set_id);
+				return res.send(404);
+			}
 
-		res.render('photoset', { title: 'Gallery', photos: photos });
-	});
+			var photos = utils.photosFromList(responseData.photoset.photo);
+
+			res.render('photoset', { title: photoset.title, photos: photos });
+		});
+	} else {
+		return res.send(404);
+	}
 });
 
 module.exports = router;

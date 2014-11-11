@@ -71,9 +71,12 @@ app.use(function(req, res, next) {
 				}
 				
 				var photosets = {};
+				var setSlug = '';
 				_.each(responseData.photosets.photoset, function(s){
-					photosets[slug(s.title._content).toLowerCase()] = {
+					setSlug = slug(s.title._content).toLowerCase();
+					photosets[setSlug] = {
 						id: s.id,
+						slug: setSlug,
 						title: s.title._content,
 						images: utils.normalizePhotoSizes(s.primary_photo_extras)
 					};
