@@ -11,8 +11,10 @@
     "debug": "~0.7.4",
     "express": "~4.2.0",
     "express-handlebars": "1.1.x",
+    "memcached": "^2.0.0",
     "morgan": "~1.0.0",
     "oauth": "0.9.x",
+    "slug": "^0.8.0",
     "static-favicon": "~1.0.0",
     "underscore": "1.7.x"
   }
