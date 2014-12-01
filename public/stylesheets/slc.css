@@ -59,7 +59,7 @@ hr.decorative {
 /* Header */
 
 .header {
-	padding: 80px 0 0;
+	padding: 20px 0 0;
 	text-align: center;
 }
 
@@ -71,9 +71,13 @@ hr.decorative {
 .big-logo {
 	background-image: url('http://sweetlaurencakes.com/assets/images/sweet_lauren_cakes.png');
 	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 345px 115px;
+	background-size: contain; 
 	display: block;
-	width: 400px;
-	height: 135px;
+	width: 100%;
+	max-width: 345px;
+	height: 115px;
 	margin: 0 auto 20px;
 	text-indent: -9999px;
 }
@@ -155,41 +159,125 @@ li { *display: inline; zoom: 1; }
     color:#ccc;
 }
 
-/* Page Wrapper */
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
 
-.wrapper {
-	background-image: url('http://sweetlaurencakes.com/assets/images/bg.gif');
-	background-position: center;
-	background-repeat: repeat-y;
-	background-size: 1210px 1px;
-	min-height: 1277px;
-	position: relative;
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+	/* Header */
+
+	.header {
+		padding: 50px 0 0;
+	}
+
+	.big-logo {
+		background-size: 405px 135px;
+		max-width: 405px;
+		height: 135px;
+	}
+
+	/* Page Wrapper */
+
+	.wrapper {
+		position: relative;
+		min-height: 869px;
+		background-image: url('http://sweetlaurencakes.com/assets/images/bg.gif');
+		background-position: center;
+		background-repeat: repeat-y;
+		background-size: 761px 1px;
+	}
+
+	.wrapper-top {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 692px;
+		background-image: url('http://sweetlaurencakes.com/assets/images/container_top.gif');
+		background-position: center top;
+		background-repeat: no-repeat;
+		background-size: 768px 692px;
+	}
+
+	.wrapper-body {
+		position: relative;
+		padding-bottom: 145px;
+	}
+
+	.wrapper-bottom {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		padding-top: 72px;
+		background-image: url('http://sweetlaurencakes.com/assets/images/container_bottom.gif');
+		background-color: #FFFFFF;
+		background-position: center top;
+		background-repeat: no-repeat;
+		background-size: 768px 62px;
+	}
+
 }
 
-.wrapper-top {
-	background-image: url('http://sweetlaurencakes.com/assets/images/container_top.gif');
-	background-position: center top;
-	background-repeat: no-repeat;
-	background-size: 1220px 1100px;
-	width: 100%;
-	height: 1100px;
-	position: absolute;
-	top: 0;
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+	/* Header */
+
+	.header {
+		padding: 65px 0 0;
+	}
+
+	/* Page Wrapper */
+
+	.wrapper {
+		background-size: 1000px 1px;
+		min-height: 1071px;
+	}
+
+	.wrapper-top {
+		background-size: 1010px 911px;
+		height: 911px;
+	}
+
+	.wrapper-body {
+		padding-bottom: 160px;
+	}
+
+	.wrapper-bottom {
+		background-size: 1010px 78px;
+		padding-top: 88px;
+	}
+
 }
 
-.wrapper-body {
-	position: relative;
-	padding-bottom: 175px;
-}
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
 
-.wrapper-bottom {
-	background-image: url('http://sweetlaurencakes.com/assets/images/container_bottom.gif');
-	background-color: #FFFFFF;
-	background-position: center top;
-	background-repeat: no-repeat;
-	background-size: 1220px 94px;
-	width: 100%;
-	padding-top: 105px;
-	position: absolute;
-	bottom: 0;
+	/* Header */
+
+	.header {
+		padding: 80px 0 0;
+	}
+
+	/* Page Wrapper */
+
+	.wrapper {
+		background-size: 1210px 1px;
+		min-height: 1277px;
+	}
+
+	.wrapper-top {
+		background-size: 1220px 1100px;
+		height: 1100px;
+	}
+
+	.wrapper-body {
+		padding-bottom: 175px;
+	}
+
+	.wrapper-bottom {
+		background-size: 1220px 94px;
+		padding-top: 104px;
+	}
+
 }
