@@ -103,10 +103,10 @@ hr.decorative {
 	display: inline-block;
 	list-style: none;
 	padding: 0px;
-	margin-right: 30px;
+	margin: 0 15px 0;
 }
 
-.nav li:last-child { margin-right: 0; }
+/* .nav li:last-child { margin-right: 0; } */
 
 /* IE7 Hack - http://www.brunildo.org/test/InlineBlockLayout.html */
 li { *display: inline; zoom: 1; }
