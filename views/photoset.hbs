@@ -2,7 +2,7 @@
 	<div class="row">
 	{{#each photos}}
 		<div class="col-xs-4 col-sm-3 col-md-2">
-			<a class="fancybox" data-fancybox-group="gallery" href="{{sizes.biggest.url}}">
+			<a class="lightbox" data-lightbox-src="{{sizes.biggest.url}}" href="https://flickr.com/photos/sweetlaurencakes/{{id}}">
 				<img class="gallery-image" src="{{sizes.square.url}}"/>
 			</a>
 		</div>
@@ -15,7 +15,20 @@
 <!-- <script type="text/javascript" src="/javascripts/lightbox.js"></script> -->
 <script type="text/javascript">
 	$(document).ready(function() {
-		$(".fancybox").imageLightbox();
+		var overlayOn = function()
+			{
+				$( '<div id="lightbox-overlay"></div>' ).appendTo( 'body' );
+			},
+			overlayOff = function()
+			{
+				$( '#lightbox-overlay' ).remove();
+			};
+
+		$(".lightbox").imageLightbox(
+		{
+			onStart: 	 function() { overlayOn(); },
+			onEnd:	 	 function() { overlayOff(); }
+		});
 	});
 </script>
 {{/contentFor}}

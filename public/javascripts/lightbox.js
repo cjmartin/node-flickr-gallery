@@ -79,7 +79,7 @@
 
 			isTargetValid = function( element )
 			{
-				return $( element ).prop( 'tagName' ).toLowerCase() == 'a' && ( new RegExp( '\.(' + options.allowedTypes + ')$', 'i' ) ).test( $( element ).attr( 'href' ) );
+				return $( element ).prop( 'tagName' ).toLowerCase() == 'a' && ( new RegExp( '\.(' + options.allowedTypes + ')$', 'i' ) ).test( $( element ).attr( 'data-lightbox-src' ) );
 			},
 
 			setImage = function()
@@ -139,7 +139,7 @@
 				setTimeout( function()
 				{
 					image = $( '<img ' + options.selector + ' />' )
-					.attr( 'src', target.attr( 'href' ) )
+					.attr( 'src', target.attr( 'data-lightbox-src' ) )
 					.load( function()
 					{
 						image.appendTo( 'body' );
@@ -169,7 +169,7 @@
 						{
 							var nextTarget = targets.eq( targets.index( target ) + 1 );
 							if( !nextTarget.length ) nextTarget = targets.eq( 0 );
-							$( '<img />' ).attr( 'src', nextTarget.attr( 'href' ) ).load();
+							$( '<img />' ).attr( 'src', nextTarget.attr( 'data-lightbox-src' ) ).load();
 						}
 					})
 					.error( function()
