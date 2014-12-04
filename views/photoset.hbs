@@ -10,15 +10,12 @@
 	</div>
 </div>
 
-{{#contentFor "pageStyles"}}
-<link rel="stylesheet" href="http://assets.sweetlaurencakes.com/gallery/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
-{{/contentFor}}
-
 {{#contentFor "pageScripts"}}
-<script type="text/javascript" src="http://assets.sweetlaurencakes.com/gallery/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<script type="text/javascript" src="http://assets.sweetlaurencakes.com/gallery/javascripts/lightbox.js"></script>
+<!-- <script type="text/javascript" src="/javascripts/lightbox.js"></script> -->
 <script type="text/javascript">
 	$(document).ready(function() {
-		$(".fancybox").fancybox();
+		$(".fancybox").imageLightbox();
 	});
 </script>
 {{/contentFor}}
