@@ -2,6 +2,10 @@ body {
     font-family: Palatino, 'Palatino Linotype', 'Book Antiqua', serif;
 }
 
+.wrapper-body{
+	padding-top: 20px;
+}
+
 /* Base Element Styles */
 
 a {
@@ -59,7 +63,6 @@ hr.decorative {
 /* Header */
 
 .header {
-	padding: 20px 0 0;
 	text-align: center;
 }
 
@@ -84,22 +87,22 @@ hr.decorative {
 
 /* Navigation */
 
-.nav {
-	margin: 0 -15px 15px 0;
+.navlist {
+	margin: 0 0 15px;
 }
 
-.nav a {
+.navlist a {
 	letter-spacing: 2px;
 	text-transform: uppercase;
 }
 
-.nav ul {	
+.navlist ul {	
 	text-align: center;
 	margin: 0;
 	padding: 0;
 }
 
-.nav li {
+.navlist li {
 	display: inline-block;
 	list-style: none;
 	padding: 0px;
@@ -118,7 +121,7 @@ li { *display: inline; zoom: 1; }
 }
 
 .main-carousel-item {
-	height: 550px;
+	height: 250px;
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -165,16 +168,14 @@ li { *display: inline; zoom: 1; }
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
 
-	/* Header */
-
-	.header {
-		padding: 50px 0 0;
-	}
-
 	.big-logo {
 		background-size: 405px 135px;
 		max-width: 405px;
 		height: 135px;
+	}
+
+	.main-carousel-item {
+		height: 550px;
 	}
 
 	/* Page Wrapper */
@@ -201,6 +202,7 @@ li { *display: inline; zoom: 1; }
 
 	.wrapper-body {
 		position: relative;
+		padding-top: 50px;
 		padding-bottom: 145px;
 	}
 
@@ -221,10 +223,8 @@ li { *display: inline; zoom: 1; }
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
 
-	/* Header */
-
-	.header {
-		padding: 65px 0 0;
+	.main-carousel-item {
+		height: 550px;
 	}
 
 	/* Page Wrapper */
@@ -240,6 +240,7 @@ li { *display: inline; zoom: 1; }
 	}
 
 	.wrapper-body {
+		padding-top: 65px;
 		padding-bottom: 160px;
 	}
 
@@ -253,10 +254,8 @@ li { *display: inline; zoom: 1; }
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
 
-	/* Header */
-
-	.header {
-		padding: 80px 0 0;
+	.main-carousel-item {
+		height: 550px;
 	}
 
 	/* Page Wrapper */
@@ -272,6 +271,7 @@ li { *display: inline; zoom: 1; }
 	}
 
 	.wrapper-body {
+		padding-top: 80px;
 		padding-bottom: 175px;
 	}
 
