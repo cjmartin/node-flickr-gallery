@@ -40,7 +40,7 @@ router.get('/gallery/:set_slug', function(req, res) {
 
 			var photos = utils.photosFromList(responseData.photoset.photo);
 
-			res.render('photoset', { title: photoset.title, photos: photos });
+			res.render('photoset', { title: photoset.title, id: photoset.id, photos: photos });
 		});
 	} else {
 		return res.send(404);
