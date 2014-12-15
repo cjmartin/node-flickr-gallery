@@ -8,7 +8,11 @@ var _ = require('underscore'),
 
 /* GET home page. */
 router.get('/gallery', function(req, res) {
-	res.render('index', { title: 'Gallery', photosets: req.photosets });
+	if (req.query.embedded) {
+		return res.render('embed', { photosets: req.photosets, layout: false });
+	}
+	
+	return res.render('index', { title: 'Gallery', photosets: req.photosets });
 });
 
 router.get('/gallery/:set_slug', function(req, res) {
